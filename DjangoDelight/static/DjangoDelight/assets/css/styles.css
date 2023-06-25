@@ -1,0 +1,27 @@
+.tombol {
+    background-color: #202452;
+    color: whitesmoke;
+    margin-left: 10px;
+}
+.tombol:hover {
+    background-color: #f5c2c7;
+}
+
+.nav-link:hover {
+    background-color: rgba(245, 194, 199, 0.7);
+}
+
+.main-field {
+    margin-top: 5%;
+}
+
+.menu-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+}
+
+.purchased-dashboard {
+    margin-top: 40px;
+}
