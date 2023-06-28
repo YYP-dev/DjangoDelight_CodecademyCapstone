@@ -22,6 +22,9 @@
     row-gap: 20px;
 }
 
-.purchased-dashboard {
-    margin-top: 40px;
+.purchasing-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
 }

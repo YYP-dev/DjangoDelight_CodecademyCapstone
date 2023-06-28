@@ -2,17 +2,67 @@
 {% block title %} Django {% endblock %}
 {% block content %}
     <div>
+        <h1>Ingredients</h1>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1>Add Ingredients</h1>
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Open this select menu</option>
-            {% for item in menu %}
-          <option value="1">{{ item.name }}</option>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Unit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in ingredient %}
+            <tr>
+              <th scope="row">{{ item.id }}</th>
+              <td>{{ item.name }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.unit }}</td>
+            </tr>
             {% endfor %}
-        </select>
-    </div>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+
+
+        <h4> Add Ingredients </h4>
+        <br>
+        <form method="post" action="{% url 'addIngredients' %}">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+            <span class="input-group-text">Name</span>
+            <input type="text" class="form-control" name="name">
+            <span class="input-group-text">Quantity</span>
+            <input type="text" class="form-control" name="quantity">
+            <span class="input-group-text">Unit</span>
+            <input type="text" class="form-control" name="unit">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        </form>
+
+
+        <h4> Update Ingredients </h4>
+        <br>
+        <form method="post">
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Ingredients</button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+              <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            </div>
+        </form>
+
 {% endblock content %}
